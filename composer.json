@@ -1,0 +1,64 @@
+{
+    "name": "fanswoo/laravel-cloud-run-log",
+    "description": "Writes Laravel logs on Google Cloud Run as one Cloud Logging entry per record, filed under the trace of its request, with errors that Error Reporting reads.",
+    "keywords": [
+        "laravel",
+        "logging",
+        "monolog",
+        "google",
+        "cloud-run",
+        "cloud-logging",
+        "error-reporting"
+    ],
+    "homepage": "https://github.com/fanswoo/laravel-cloud-run-log",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "fanswoo"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "illuminate/container": "^12.0|^13.0",
+        "illuminate/contracts": "^12.0|^13.0",
+        "illuminate/http": "^12.0|^13.0",
+        "illuminate/log": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0",
+        "monolog/monolog": "^3.6"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.20",
+        "orchestra/testbench": "^10.0|^11.0",
+        "pestphp/pest": "^3.8|^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fanswoo\\CloudRunLog\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fanswoo\\CloudRunLog\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fanswoo\\CloudRunLog\\CloudRunLogServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "lint": "pint",
+        "test:lint": "pint --test",
+        "test": "pest"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
